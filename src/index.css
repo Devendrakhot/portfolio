@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  cursor: none;
+  background-color: #111827;
+}
+
+a, button {
+  cursor: none;
+}
+
+/* Hide default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Custom cursor styles */
+#cursor {
+  transform: translate(-50%, -50%);
+}
+
+a:hover ~ #cursor,
+button:hover ~ #cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Fade in animation */
+.fade-in {
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gradient animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 8s linear infinite;
+}
