@@ -146,13 +146,15 @@ function App() {
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
       {[
         { name: 'JavaScript', level: '90%' },
-        { name: 'Node.js', level: '85%' },
-        { name: 'React', level: '88%' },
-        { name: 'TypeScript', level: '82%' },
-        { name: 'HTML/CSS', level: '95%' },
+        { name: 'Node.js', level: '75%' },
+        { name: 'React', level: '65%' },
+        { name: 'TypeScript', level: '72%' },
         { name: 'Git', level: '85%' },
-        { name: 'MongoDB', level: '80%' },
-        { name: 'Express.js', level: '85%' },
+        { name: 'MongoDB', level: '50%' },
+        { name: 'Express.js', level: '75%' },
+        { name: 'Python', level: '80%' },
+        { name: 'MySql', level: '85%' },
+        { name: 'Strapi', level: '40%' }
       ].map((skill) => (
         <div
           key={skill.name}
@@ -163,7 +165,7 @@ function App() {
           </div>
           <div className="w-full h-2 bg-gray-700/50 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-700 group-hover:scale-x-110 origin-left"
+              className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-700  "
               style={{ width: skill.level }}
             />
           </div>
