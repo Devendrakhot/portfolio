@@ -291,77 +291,92 @@ function App() {
 
       {/* Move projects outside the map */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-        {[
-          {
-            title: "Chinmaya Mission Website",
-            desc: "Chinmaya Mission is a global spiritual organization founded by Swami Chinmayananda in 1953. It spreads the teachings of Vedanta (the essence of Hindu philosophy)",
-            img: "./chinmaya.png",
-            tech: ["React", "TypeScript", "Node.js", "MongoDB"]
-          },
-          {
-            title: "Chinmaya 75 Website",
-            desc: "75th Birth Anniversary celebration of Chinmaya Mission — a grand, year-long tribute to Pujya Gurudev Swami Chinmayananda",
-            img: "./chinmaya75.png",
-            tech: ["React", "TypeScript", "Node.js", "MongoDB"]
-          },
-          {
-            title: "Job Skill Pro",
-            desc: "It is client base Project having students Coruses and Information of institute.",
-            img: "./jsp.png",
-            tech: ["React", "HTML", "CSS"]
-          },
-          {
-            title: "E-commerce Platform",
-            desc: "A full-stack e-commerce solution with real-time Data management.",
-            img: "e.jpeg",
-            tech: ["React", "Node.js", "MongoDB"]
-          },
-         
-          
-         
-          {
-            title: "Event Management",
-            desc: "The Project is For Event Planing its having Admin Login and Student Login It store all data in Array.",
-            img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            tech: ["HTML", "CSS", "JavaScript"]
-          },
-        ].map((project, index) => (
-          <div
-          key={index}
-          className="group relative flex flex-col items-center text-center bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-3xl overflow-hidden shadow-2xl hover:shadow-blue-500/40 hover:scale-105 transform transition-all duration-500"
-        >
-          <div className="relative w-full h-56 overflow-hidden">
-            <img
-              src={project.img}
-              alt={project.title}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
-          </div>
-        
-          {/* Card Content */}
-          <div className="relative z-20 p-6 flex flex-col items-center text-center space-y-4">
-            <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition duration-300">
-              {project.title}
-            </h3>
-            <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
-              {project.desc}
-            </p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {project.tech.map((tech, i) => (
-                <span
-                  key={i}
-                  className="bg-blue-600/30 text-blue-100 px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide backdrop-blur-md"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-        
+      {[
+  {
+    title: "Chinmaya Mission Website",
+    desc: "Chinmaya Mission is a global spiritual organization founded by Swami Chinmayananda in 1953. It spreads the teachings of Vedanta (the essence of Hindu philosophy)",
+    img: "./chinmaya.png",
+    tech: ["React", "TypeScript", "Node.js", "MongoDB"]
+ 
+  },
+  {
+    title: "Chinmaya 75 Website",
+    desc: "75th Birth Anniversary celebration of Chinmaya Mission — a grand, year-long tribute to Pujya Gurudev Swami Chinmayananda",
+    img: "./chinmaya75.png",
+    tech: ["React", "TypeScript", "Node.js", "MongoDB"]
+  },
+  {
+    title: "Job Skill Pro",
+    desc: "It is client base Project having students Coruses and Information of institute.",
+    img: "./jsp.png",
+    tech: ["React", "HTML", "CSS"],
+    link: "https://jspor.netlify.app/"
+  },
+  {
+    title: "Event Management",
+    desc: "The Project is For Event Planing its having Admin Login and Student Login It store all data in Array.",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "https://saraswatievent.netlify.app"
+  },
+  {
+    title: "E-commerce Platform",
+    desc: "A full-stack e-commerce solution with real-time Data management.",
+    img: "e.jpeg",
+    tech: ["React", "Node.js", "MongoDB"]
+  }
+].map((project, index) => (
+  <div
+    key={index}
+    className="group relative flex flex-col items-center text-center bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-3xl overflow-hidden shadow-2xl hover:shadow-blue-500/40 hover:scale-105 transform transition-all duration-500"
+  >
+    {/* Image */}
+    <div className="relative w-full h-56 overflow-hidden">
+      <img
+        src={project.img}
+        alt={project.title}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
+    </div>
+
+    {/* Content */}
+    <div className="relative z-20 p-6 flex flex-col items-center text-center space-y-4">
+      <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition duration-300">
+        {project.title}
+      </h3>
+      <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+        {project.desc}
+      </p>
+
+      <div className="flex flex-wrap justify-center gap-2">
+        {project.tech.map((tech, i) => (
+          <span
+            key={i}
+            className="bg-blue-600/30 text-blue-100 px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide backdrop-blur-md"
+          >
+            {tech}
+          </span>
         ))}
       </div>
+
+      {/* Live Demo Button */}
+      {project.link && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block px-5 py-2 text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-full transition"
+        >
+          Live Demo
+        </a>
+      )}
+    </div>
+  </div>
+))}
+
+</div>
+
     </div>
   </div>
 </section>
