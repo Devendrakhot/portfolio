@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Github, Linkedin, Mail, User, Code, Briefcase, GraduationCap, ExternalLink, Phone, MapPin, FolderGit2, Globe, Database, Server } from 'lucide-react';
-
+import { v4 as uuidv4 } from "uuid";
 function App() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -12,7 +12,50 @@ function App() {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+ const trackVisitor = async () => {
+      const params = new URLSearchParams(window.location.search);
 
+      // ✅ Extract all tracking info from query string
+      const utmParams = {
+        utm_source: params.get("utm_source"),
+        utm_medium: params.get("utm_medium"),
+        gclid: params.get("gclid"),
+        fbclid: params.get("fbclid"),
+      };
+
+      const assetId = params.get("asset_id") || "unknown-asset";
+      const adAccountId = params.get("ad_account_id") || "unknown-account";
+
+      // ✅ Maintain session across reloads
+      let sessionId = localStorage.getItem("session_id");
+      if (!sessionId) {
+        sessionId = uuidv4();
+        localStorage.setItem("session_id", sessionId);
+      }
+
+      try {
+        const res = await fetch("https://visitor-jbk2.onrender.com/api/track", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            userAgent: navigator.userAgent,
+            utmParams,
+            targetUrl: window.location.href,
+            assetId,
+            adAccountId,
+            sessionId,
+            sessionStart: new Date(),
+          }),
+        });
+
+        const result = await res.json();
+        console.log("📦 Backend Response:", result);
+      } catch (err) {
+        console.error("❌ Visitor tracking failed:", err);
+      }
+    };
+
+    trackVisitor();
     return () => observer.disconnect();
   }, []);
 
