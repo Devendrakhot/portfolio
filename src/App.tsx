@@ -61,8 +61,29 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white cursor-none">
-      {/* Custom Cursor */}
-      <div id="cursor" className="fixed w-4 h-4 bg-blue-500 rounded-full pointer-events-none mix-blend-difference z-50 w-10 h-10 transition-transform duration-100 ease-out" />
+
+  {/* Floating Resume Download Button */}
+  <div className="fixed bottom-8 right-8 z-50 flex items-center">
+    {/* Glowing animated ring */}
+    <span className="absolute inline-flex h-16 w-16 rounded-full bg-gradient-to-tr from-blue-400 via-purple-500 to-blue-600 opacity-70 blur-lg animate-pulse pointer-events-none"></span>
+    <a
+      href="/Devendra khot.pdf"
+      download
+      className="relative flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 shadow-2xl shadow-blue-500/40 border-2 border-white/10 hover:scale-110 hover:shadow-blue-400/70 transition-all duration-300 font-bold text-lg"
+      title="Download Resume"
+      style={{ boxShadow: '0 8px 32px 0 rgba(59,130,246,0.35)' }}
+    >
+      {/* Download Icon */}
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v12m0 0l-4-4m4 4l4-4m-8 8h12" />
+      </svg>
+      <span className="animate-pulse">Resume</span>
+    </a>
+  </div>
+  {/* End Floating Resume Download Button */}
+
+  {/* Custom Cursor */}
+  <div id="cursor" className="fixed w-4 h-4 bg-blue-500 rounded-full pointer-events-none mix-blend-difference z-50 w-10 h-10 transition-transform duration-100 ease-out" />
       
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10">
@@ -90,12 +111,12 @@ function App() {
     <div className="flex flex-wrap justify-center gap-8 mt-10">
       
       {/* GitHub */}
-      {/* <a 
-        href="http://github.com" 
+      <a 
+        href="https://github.com/Devendrakhot" target='_blank'
         className="group flex items-center gap-4 px-6 py-4 rounded-full bg-gray-800/60 hover:bg-blue-500/20 transition-all duration-300 backdrop-blur-sm transform hover:scale-110 hover:shadow-2xl hover:rotate-3">
         <Github size={24} className="group-hover:rotate-12 transition-transform duration-300" />
         <span className="font-semibold text-white group-hover:text-blue-400 transition-all">GitHub</span>
-      </a> */}
+      </a>
       
       {/* LinkedIn */}
       <a 
@@ -341,7 +362,8 @@ function App() {
     title: "Chinmaya Mission Website",
     desc: "Chinmaya Mission is a global spiritual organization founded by Swami Chinmayananda in 1953. It spreads the teachings of Vedanta (the essence of Hindu philosophy)",
     img: "./chinmaya.png",
-    tech: ["React", "TypeScript", "Node.js", "MongoDB"]
+    tech: ["React", "TypeScript", "Node.js", "MongoDB"],
+     link: "https://www.chinmayamission.com/"
  
   },
   {
