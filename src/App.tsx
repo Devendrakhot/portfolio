@@ -67,7 +67,7 @@ function App() {
     {/* Glowing animated ring */}
     <span className="absolute inline-flex h-16 w-16 rounded-full bg-gradient-to-tr from-blue-400 via-purple-500 to-blue-600 opacity-70 blur-lg animate-pulse pointer-events-none"></span>
     <a
-      href="Devendra khot.pdf"
+      href="Devendra Khot.pdf"
       download
       className="relative flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 shadow-2xl shadow-blue-500/40 border-2 border-white/10 hover:scale-110 hover:shadow-blue-400/70 transition-all duration-300 font-bold text-lg"
       title="Download Resume"
