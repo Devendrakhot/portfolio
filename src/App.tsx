@@ -99,7 +99,7 @@ function App() {
     
     {/* Name with Gradient and Dynamic Animation */}
     <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 text-transparent bg-clip-text animate-gradient animate__animated animate__fadeInUp">
-      Devendra Khot
+      Devendra Khot....
     </h1>
 
     {/* Subtitle with smooth transition */}
