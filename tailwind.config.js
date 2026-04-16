@@ -2,7 +2,13 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        display: ["'Bricolage Grotesque'", 'sans-serif'],
+        body:    ["'DM Sans'", 'sans-serif'],
+        mono:    ["'Fira Code'", 'monospace'],
+      },
+    },
   },
   plugins: [],
 };
